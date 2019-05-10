@@ -1,0 +1,16 @@
+#Garfield the Cat
+
+## gameplay
+gameplay input and display is run through the VirtualPetApp
+
+There are several thing you can do with garfield
+1. Play with him.
+2. Take him out to the bathroom, he is weird and won't use a litter box.
+3. Feed Garfield, he loves his food
+4. Put garfield to bed.
+
+PLaying with garfield
+Tell him you want to play, or we're going to play and he'll ask what you want to do
+1. Play with string- this will reduce his boredom by 20 and raise his sleepiness by 20
+2. Play with a laser pointer- this will reduce his boredom by 30 but raise his sleepiness to 30
+3. Give him catnip- this will instantly take care of all his boredom but will max out his sleepiness.
