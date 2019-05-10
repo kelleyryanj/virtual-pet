@@ -123,6 +123,11 @@ public class VirtualPet {
 		} else if (sleepiness < 0) {
 			sleepiness = 0;
 		}
+		if (boredom > 100) {
+			boredom = 100;
+		} else if (boredom < 0) {
+			boredom = 0;
+		}
 
 	}
 

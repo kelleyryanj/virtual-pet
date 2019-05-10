@@ -21,41 +21,45 @@ public class VirtualPetApp {
 				gameInput = input.nextLine();
 				garfield.getFood(gameInput);
 			} else if (garfield.getBathroomNeed() > 70) {
-				System.out.println("I have to potty now. I'll take myslef out");
+				System.out.println("I have to potty now. I'll take myself out");
 				garfield.getPotty();
-			} else if (garfield.getBoredom() > 90) {
+			} else if (garfield.getBoredom() > 70) {
 				System.out.println("I'm bored! What do you want to play?");
 				gameInput = input.nextLine();
 				garfield.getPlay(gameInput);
-			}
+			} else {
 
-			System.out.println("What do you want to do?");
-			gameOptions = input.nextLine();
-			{
-				if (gameOptions.toLowerCase().contains("feed")) {
-					System.out.println("What ya got good for me?!");
-					gameInput = input.nextLine();
-					garfield.getFood(gameInput);
+				System.out.println("What do you want to do?");
+				gameOptions = input.nextLine();
+				{
+					if (gameOptions.toLowerCase().contains("feed")) {
+						System.out.println("What ya got good for me?!");
+						gameInput = input.nextLine();
+						garfield.getFood(gameInput);
+						if (gameInput.toLowerCase().contains("lasagna")) {
+							System.out.println("Hmmm lasagna.. That's my favorite!!!!");
+						}
 
-				} else if (gameOptions.toLowerCase().contains("bathroom")) {
-					System.out.println("Ok, take me outside.");
-					gameInput = "bathroom";
-					garfield.getPotty(gameInput);
+					} else if (gameOptions.toLowerCase().contains("bathroom")) {
+						System.out.println("Ok, take me outside.");
+						gameInput = "bathroom";
+						garfield.getPotty(gameInput);
 
-				} else if (gameOptions.toLowerCase().contains("play")) {
-					System.out.println("Ok what do you want to play?");
-					gameInput = input.nextLine();
-					garfield.getPlay(gameInput);
+					} else if (gameOptions.toLowerCase().contains("play")) {
+						System.out.println("Ok what do you want to play?");
+						gameInput = input.nextLine();
+						garfield.getPlay(gameInput);
 
-				} else if (gameOptions.toLowerCase().contains("bed")) {
-					System.out.println("Ok, tuck me in please.");
-					gameInput = "bed";
-					garfield.getSleep(gameInput);
+					} else if (gameOptions.toLowerCase().contains("bed")) {
+						System.out.println("Ok, tuck me in please.");
+						gameInput = "bed";
+						garfield.getSleep(gameInput);
 
-				} else if (gameOptions.toLowerCase().contains("quit")) {
-					gameLoop = false;
-				} else {
-					System.out.println("I don't know how to do that");
+					} else if (gameOptions.toLowerCase().contains("quit")) {
+						gameLoop = false;
+					} else {
+						System.out.println("I don't know how to do that");
+					}
 				}
 			}
 			garfield.tick();
@@ -64,6 +68,7 @@ public class VirtualPetApp {
 			System.out.println("bathroomNeed " + garfield.getBathroomNeed());
 			System.out.println("hunger " + garfield.getHunger());
 		}
+
 		System.out.println("Ok see you later!");
 		System.exit(0);
 
