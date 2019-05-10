@@ -17,6 +17,11 @@ public class VirtualPet {
 
 	public void getHunger(int hunger) {
 		this.hunger = hunger;
+		if (hunger > 100) {
+			hunger = 100;
+		} else if (hunger < 0) {
+			hunger = 0;
+		}
 	}
 
 	public int getBathroomNeed() {
@@ -25,7 +30,12 @@ public class VirtualPet {
 
 	public void getBathroomNeed(int bathroomNeed) {
 		this.bathroomNeed = bathroomNeed;
-
+		if (bathroomNeed > 100) {
+			bathroomNeed = 100;
+		}
+		if (bathroomNeed < 0) {
+			bathroomNeed = 0;
+		}
 	}
 
 	public int getBoredom() {
@@ -34,6 +44,11 @@ public class VirtualPet {
 
 	public void getBoredom(int boredom) {
 		this.boredom = boredom;
+		if (boredom > 100) {
+			boredom = 100;
+		} else if (boredom < 0) {
+			boredom = 0;
+		}
 
 	}
 
@@ -43,6 +58,11 @@ public class VirtualPet {
 
 	public void getSleepiness(int sleepiness) {
 		this.sleepiness = sleepiness;
+		if (sleepiness > 100) {
+			sleepiness = 100;
+		} else if (sleepiness < 0) {
+			sleepiness = 0;
+		}
 	}
 
 	public String getFood() {
@@ -61,15 +81,10 @@ public class VirtualPet {
 			bathroomNeed = 100;
 			hunger = 0;
 		}
-		if (hunger > 100) {
-			hunger = 100;
-		} else if (hunger < 0) {
-			hunger = 0;
-		}
-
 		if (bathroomNeed > 100) {
 			bathroomNeed = 100;
-		} else if (sleepiness < 0) {
+		}
+		if (bathroomNeed < 0) {
 			bathroomNeed = 0;
 		}
 	}
@@ -82,12 +97,7 @@ public class VirtualPet {
 		this.potty = potty;
 		if (potty.toLowerCase().contains("bathroom")) {
 			bathroomNeed -= 50;
-			if (bathroomNeed > 100) {
-				bathroomNeed = 100;
-			}
-			if (bathroomNeed < 0) {
-				bathroomNeed = 0;
-			}
+
 		}
 	}
 
@@ -108,17 +118,12 @@ public class VirtualPet {
 			sleepiness = 100;
 			boredom = 0;
 		}
-		if (boredom > 100) {
-			boredom = 100;
-		} else if (boredom < 0) {
-			boredom = 0;
-		}
-
 		if (sleepiness > 100) {
 			sleepiness = 100;
 		} else if (sleepiness < 0) {
 			sleepiness = 0;
 		}
+
 	}
 
 	public String getSleep() {
@@ -129,7 +134,15 @@ public class VirtualPet {
 		this.sleep = sleep;
 		if (sleep.toLowerCase().contains("bed")) {
 			sleepiness = 0;
-			
-			}
+
+		}
+
+	}
+
+	public void tick() {
+		hunger = hunger += 10;
+		sleepiness = sleepiness += 10;
+		boredom = boredom += 10;
+		bathroomNeed += 10;
 	}
 }

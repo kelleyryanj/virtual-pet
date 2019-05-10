@@ -21,9 +21,12 @@ public class VirtualPetApp {
 				gameInput = input.nextLine();
 				garfield.getFood(gameInput);
 			} else if (garfield.getBathroomNeed() > 70) {
-				System.out.println("I have to potty now");
+				System.out.println("I have to potty now. I'll take myslef out");
+				garfield.getPotty();
+			} else if (garfield.getBoredom() > 90) {
+				System.out.println("I'm bored! What do you want to play?");
 				gameInput = input.nextLine();
-				garfield.getPotty(gameInput);
+				garfield.getPlay(gameInput);
 			}
 
 			System.out.println("What do you want to do?");
@@ -33,30 +36,37 @@ public class VirtualPetApp {
 					System.out.println("What ya got good for me?!");
 					gameInput = input.nextLine();
 					garfield.getFood(gameInput);
-					System.out.println(garfield.getFood());
 
 				} else if (gameOptions.toLowerCase().contains("bathroom")) {
 					System.out.println("Ok, take me outside.");
 					gameInput = "bathroom";
 					garfield.getPotty(gameInput);
-					System.out.println(garfield.getBathroomNeed());
 
 				} else if (gameOptions.toLowerCase().contains("play")) {
 					System.out.println("Ok what do you want to play?");
 					gameInput = input.nextLine();
 					garfield.getPlay(gameInput);
-					System.out.println(garfield.getBoredom());
-					System.out.println(garfield.getSleepiness());
 
 				} else if (gameOptions.toLowerCase().contains("bed")) {
 					System.out.println("Ok, tuck me in please.");
 					gameInput = "bed";
 					garfield.getSleep(gameInput);
-					System.out.println(garfield.getSleepiness());
+
+				} else if (gameOptions.toLowerCase().contains("quit")) {
+					gameLoop = false;
+				} else {
+					System.out.println("I don't know how to do that");
 				}
-
 			}
+			garfield.tick();
+			System.out.println("sleepiness " + garfield.getSleepiness());
+			System.out.println("boredom " + garfield.getBoredom());
+			System.out.println("bathroomNeed " + garfield.getBathroomNeed());
+			System.out.println("hunger " + garfield.getHunger());
+		}
+		System.out.println("Ok see you later!");
+		System.exit(0);
 
-		} input.close();
+		input.close();
 	}
 }
