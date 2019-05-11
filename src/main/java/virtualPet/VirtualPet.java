@@ -17,11 +17,7 @@ public class VirtualPet {
 
 	public void getHunger(int hunger) {
 		this.hunger = hunger;
-		if (hunger > 100) {
-			hunger = 100;
-		} else if (hunger < 0) {
-			hunger = 0;
-		}
+
 	}
 
 	public int getBathroomNeed() {
@@ -30,12 +26,7 @@ public class VirtualPet {
 
 	public void getBathroomNeed(int bathroomNeed) {
 		this.bathroomNeed = bathroomNeed;
-		if (bathroomNeed > 100) {
-			bathroomNeed = 100;
-		}
-		if (bathroomNeed < 0) {
-			bathroomNeed = 0;
-		}
+
 	}
 
 	public int getBoredom() {
@@ -76,7 +67,7 @@ public class VirtualPet {
 			hunger -= 20;
 		} else if (food.toLowerCase().contains("tuna")) {
 			bathroomNeed += 30;
-			hunger -= 20;
+			hunger -= 30;
 		} else if (food.toLowerCase().contains("lasagna")) {
 			bathroomNeed = 100;
 			hunger = 0;
@@ -95,9 +86,8 @@ public class VirtualPet {
 
 	public void getPotty(String potty) {
 		this.potty = potty;
-		if (potty.toLowerCase().contains("bathroom")) {
-			bathroomNeed -= 50;
-
+		if (potty.toLowerCase().equals("bathroom")) {
+			bathroomNeed -= 70;
 		}
 	}
 

@@ -22,7 +22,8 @@ public class VirtualPetApp {
 				garfield.getFood(gameInput);
 			} else if (garfield.getBathroomNeed() > 70) {
 				System.out.println("I have to potty now. I'll take myself out");
-				garfield.getPotty();
+				gameInput = "bathroom";
+				garfield.getPotty(gameInput);
 			} else if (garfield.getBoredom() > 70) {
 				System.out.println("I'm bored! What do you want to play?");
 				gameInput = input.nextLine();
