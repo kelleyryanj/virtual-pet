@@ -63,13 +63,13 @@ public class VirtualPet {
 	public void getFood(String food) {
 		this.food = food;
 		if (food.toLowerCase().contains("cat food")) {
-			bathroomNeed += 20;
+			bathroomNeed += 10;
 			hunger -= 20;
 		} else if (food.toLowerCase().contains("tuna")) {
-			bathroomNeed += 30;
+			bathroomNeed += 15;
 			hunger -= 30;
 		} else if (food.toLowerCase().contains("lasagna")) {
-			bathroomNeed = 100;
+			bathroomNeed += 50;
 			hunger = 0;
 		}
 		if (bathroomNeed > 100) {
