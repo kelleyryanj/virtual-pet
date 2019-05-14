@@ -58,7 +58,7 @@ public class VirtualPetApp {
 
 			else {
 
-				System.out.println("What do you want to do?");
+				System.out.println("What do you want to do? You can always ask for your options by typing \"options\".");
 				gameInput = input.nextLine();
 				{
 					if (gameInput.toLowerCase().contains("feed")) {
@@ -115,6 +115,7 @@ public class VirtualPetApp {
 							garfield.getPlay(gameInput);
 						} else if (gameInput.toLowerCase().equals("catnip")) {
 							System.out.println("CATNIP! CATNIP! CATNIP!");
+							System.out.println();
 							gameInput = "catnip";
 							garfield.getPlay(gameInput);
 						} else {
